@@ -4,6 +4,8 @@ import typescript from '@rollup/plugin-typescript';
 import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
 import autoPreprocess from 'svelte-preprocess';
+import livereload from 'rollup-plugin-livereload';
+import serve from 'rollup-plugin-serve';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -42,6 +44,13 @@ export default {
      * @see {@link https://github.com/rollup/plugins/tree/master/packages/commonjs}
      */
     commonjs(),
+
+    // Run local web server to serve files when not in production
+    !production && serve({ contentBase: 'public', port: 3000 }),
+
+    // Watch the `public` directory and refresh the
+    // browser on changes when not in production
+    !production && livereload('public'),
 
     production && terser(),
 
