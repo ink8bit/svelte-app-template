@@ -8,29 +8,33 @@ import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 
 const production = !process.env.ROLLUP_WATCH;
+const isDev = !production;
 
 export default {
   input: 'src/main.ts',
+
   output: {
-    sourcemap: true,
+    sourcemap: isDev,
     format: 'iife',
     name: 'app',
     file: 'public/build/bundle.js',
   },
+
   plugins: [
     svelte({
       preprocess: autoPreprocess(),
 
-      // enable run-time checks when not in production
-      dev: !production,
+      // Enable run-time checks when not in production
+      dev: isDev,
 
-      // extract any component CSS out into a separate file
+      /**
+       * Extract any component CSS out into a separate file
+       * @see {@link https://github.com/sveltejs/rollup-plugin-svelte}
+       */
       css: (css) => {
-        css.write('bundle.css');
+        css.write('bundle.css', isDev);
       },
     }),
-
-    // consult the documentation for details:
 
     /**
      * External dependencies
@@ -46,16 +50,25 @@ export default {
     commonjs(),
 
     // Run local web server to serve files when not in production
-    !production && serve({ contentBase: 'public', port: 3000 }),
+    isDev && serve({ contentBase: 'public', port: 3000 }),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload('public'),
+    isDev && livereload('public'),
 
+    /**
+     * @see {@link https://github.com/terser/terser}
+     */
     production && terser(),
 
-    typescript(),
+    /**
+     * @see {@link https://github.com/rollup/plugins/tree/master/packages/typescript}
+     */
+    typescript({
+      sourceMap: isDev,
+    }),
   ],
+
   watch: {
     clearScreen: false,
   },
