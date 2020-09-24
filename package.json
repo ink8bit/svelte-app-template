@@ -1,0 +1,22 @@
+{
+  "name": "svelte-app-template",
+  "version": "0.0.0",
+  "description": "Svelte app template",
+  "main": "rollup.config.js",
+  "author": "ink8bit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ink8bit/svelte-app-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ink8bit/svelte-app-template/issues"
+  },
+  "homepage": "https://github.com/ink8bit/svelte-app-template#readme",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "check": "svelte-check"
+  }
+}
