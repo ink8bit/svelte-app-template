@@ -28,10 +28,10 @@ npm run build
 npm run dev
 ```
 
-## Testing
+## Type check
 
 ```sh
-npm t
+npm run check
 ```
 
 ## How to contribute
