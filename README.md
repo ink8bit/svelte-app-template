@@ -1,6 +1,6 @@
 # Svelte app template
 
-This template repo helps you create web apps written with Svelte.
+This template repo helps you create web apps written with [Svelte](https://svelte.dev).
 
 ## Getting started
 
