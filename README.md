@@ -1,5 +1,7 @@
 # Svelte app template
 
+![Node.js CI](https://github.com/ink8bit/svelte-app-template/workflows/Node.js%20CI/badge.svg)
+
 This template repo helps you create web apps written with [Svelte](https://svelte.dev).
 
 ## Getting started
