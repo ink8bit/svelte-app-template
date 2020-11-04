@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import autoPreprocess from 'svelte-preprocess';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
+import html from '@rollup/plugin-html';
 
 const production = !process.env.ROLLUP_WATCH;
 const isDev = !production;
@@ -17,7 +18,7 @@ export default {
     sourcemap: isDev,
     format: 'iife',
     name: 'app',
-    file: 'public/build/bundle.js',
+    file: 'build/bundle.js',
   },
 
   plugins: [
@@ -50,11 +51,11 @@ export default {
     commonjs(),
 
     // Run local web server to serve files when not in production
-    isDev && serve({ contentBase: 'public', port: 3000 }),
+    isDev && serve({ contentBase: 'build', port: 3000 }),
 
-    // Watch the `public` directory and refresh the
+    // Watch the `build` directory and refresh the
     // browser on changes when not in production
-    isDev && livereload('public'),
+    isDev && livereload('build'),
 
     /**
      * @see {@link https://github.com/terser/terser}
@@ -67,6 +68,8 @@ export default {
     typescript({
       sourceMap: isDev,
     }),
+
+    html(),
   ],
 
   watch: {
