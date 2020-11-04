@@ -8,8 +8,8 @@ import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 import html from '@rollup/plugin-html';
 
-const production = !process.env.ROLLUP_WATCH;
-const isDev = !production;
+const isProd = !process.env.ROLLUP_WATCH;
+const isDev = !isProd;
 
 export default {
   input: 'src/main.ts',
@@ -55,12 +55,12 @@ export default {
 
     // Watch the `build` directory and refresh the
     // browser on changes when not in production
-    isDev && livereload('build'),
+    isDev && livereload(),
 
     /**
      * @see {@link https://github.com/terser/terser}
      */
-    production && terser(),
+    isProd && terser(),
 
     /**
      * @see {@link https://github.com/rollup/plugins/tree/master/packages/typescript}
