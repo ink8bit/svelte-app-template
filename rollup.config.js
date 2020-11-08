@@ -7,6 +7,7 @@ import autoPreprocess from 'svelte-preprocess';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 import html from '@rollup/plugin-html';
+import image from '@rollup/plugin-image';
 
 const isProd = !process.env.ROLLUP_WATCH;
 const isDev = !isProd;
@@ -70,6 +71,8 @@ export default {
     }),
 
     html(),
+
+    image(),
   ],
 
   watch: {
