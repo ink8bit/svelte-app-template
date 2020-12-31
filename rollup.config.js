@@ -26,15 +26,11 @@ export default {
     svelte({
       preprocess: autoPreprocess(),
 
-      // Enable run-time checks when not in production
-      dev: isDev,
+      emitCss: false,
 
-      /**
-       * Extract any component CSS out into a separate file
-       * @see {@link https://github.com/sveltejs/rollup-plugin-svelte}
-       */
-      css: (css) => {
-        css.write('bundle.css', isDev);
+      compilerOptions: {
+        // Enable run-time checks when not in production
+        dev: isDev,
       },
     }),
 
