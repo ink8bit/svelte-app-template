@@ -1,3 +1,13 @@
+## v0.1.1
+
+### Fri, 26 Feb 2021 21:18:36 +0300
+
+**Released by:** @ink8bit
+
+```
+3ce6f40 | ink8bit: Update rollup
+```
+
 
 ## v0.1.0
 
