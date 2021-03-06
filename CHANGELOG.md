@@ -1,3 +1,13 @@
+## v0.1.2
+
+### Sat, 06 Mar 2021 22:01:33 +0300
+
+**Released by:** @ink8bit
+
+```
+fb947cc | ink8bit: Update svelte-check v1.2.3
+```
+
 ## v0.1.1
 
 ### Fri, 26 Feb 2021 21:18:36 +0300
