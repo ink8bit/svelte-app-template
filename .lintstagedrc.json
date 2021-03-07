@@ -1,0 +1,6 @@
+{
+  "**/*.svelte": ["prettier --write"],
+  "**/*.ts": ["prettier --write", "eslint"],
+  "**/*.js": ["prettier --write", "eslint"],
+  "**/*.json": ["prettier --write"]
+}
