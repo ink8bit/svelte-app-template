@@ -1,3 +1,16 @@
+## v0.1.3
+
+### Sun, 07 Mar 2021 16:07:15 +0300
+
+**Released by:** @ink8bit
+
+```
+1ff77e4 | ink8bit: Add eslint
+19fb0f6 | ink8bit: Add eslint and script commands
+98c69a8 | ink8bit: Downgrade husky
+7dafd9c | ink8bit: Update configs
+```
+
 ## v0.1.2
 
 ### Sat, 06 Mar 2021 22:01:33 +0300

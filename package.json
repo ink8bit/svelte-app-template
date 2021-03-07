@@ -1,6 +1,6 @@
 {
   "name": "svelte-app-template",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Svelte app template",
   "main": "rollup.config.js",
   "author": "ink8bit",
